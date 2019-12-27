@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="test.css" rel="stylesheet"/>
+    <script>
+        function Drawtest() {
+            const canvas= document.getElementById('canvas_brush');
+            const ctx = canvas.getContext('2d');
+            ctx.lineWidth=10;
+            ctx.strokeRect(50,50,100,50);
+            ctx.fillRect(60,60,50,50);
+            ctx.closePath();
+            ctx.stroke();
+        }
+    </script>
 </head>
 <body>
-<div>
-   test gai
-</div>
-<div>
-    teset2 dfsfas fdsf 
-</div>
+<canvas id="canvas_brush" width="400" height="400">
+</canvas>
+<script>
+    Drawtest();
+</script>
 </body>
 </html>
