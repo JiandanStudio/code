@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="test.css" rel="stylesheet"/>
+    <script>
+        function Drawtest() {
+            const canvas= document.getElementById('canvas_brush');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle='#000000';
+            ctx.lineWidth=5;
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,200);
+            ctx.stroke();
+
+          // ctx.closePath();
+        }
+    </script>
+</head>
+<body>
+<canvas id="canvas_brush" width="800" height="800">
+</canvas>
+<script>
+    Drawtest();
+</script>
+</body>
+</html>
