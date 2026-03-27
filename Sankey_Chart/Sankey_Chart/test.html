@@ -1,223 +1,565 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Awesome-pyecharts</title>
-                <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
-
-</head>
-<body >
-    <div id="331262103b29493ea90668588d29b202" class="chart-container" style="width:900px; height:500px; "></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户转化漏斗桑基图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    
+    <!-- Tailwind 配置 -->
     <script>
-        var chart_331262103b29493ea90668588d29b202 = echarts.init(
-            document.getElementById('331262103b29493ea90668588d29b202'), 'white', {renderer: 'canvas'});
-        var option_331262103b29493ea90668588d29b202 = {
-    "animation": true,
-    "animationThreshold": 2000,
-    "animationDuration": 1000,
-    "animationEasing": "cubicOut",
-    "animationDelay": 0,
-    "animationDurationUpdate": 300,
-    "animationEasingUpdate": "cubicOut",
-    "animationDelayUpdate": 0,
-    "aria": {
-        "enabled": false
-    },
-    "color": [
-        "#5470c6",
-        "#91cc75",
-        "#fac858",
-        "#ee6666",
-        "#73c0de",
-        "#3ba272",
-        "#fc8452",
-        "#9a60b4",
-        "#ea7ccc"
-    ],
-    "series": [
-        {
-            "type": "sankey",
-            "data": [
-                {
-                    "name": "\u7537"
-                },
-                {
-                    "name": "\u5973"
-                },
-                {
-                    "name": "\u5355\u8eab"
-                },
-                {
-                    "name": "\u8131\u5355"
-                },
-                {
-                    "name": "\u672a\u77e5"
-                },
-                {
-                    "name": "\u5c0f\u5b66"
-                },
-                {
-                    "name": "\u521d\u4e2d"
-                },
-                {
-                    "name": "\u5927\u4e13"
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        neutral: '#1F2937',
+                        light: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
                 }
-            ],
-            "links": [
-                {
-                    "source": "\u5973",
-                    "target": "\u5355\u8eab",
-                    "value": 33
-                },
-                {
-                    "source": "\u5973",
-                    "target": "\u672a\u77e5",
-                    "value": 62
-                },
-                {
-                    "source": "\u5973",
-                    "target": "\u8131\u5355",
-                    "value": 5
-                },
-                {
-                    "source": "\u7537",
-                    "target": "\u5355\u8eab",
-                    "value": 57
-                },
-                {
-                    "source": "\u7537",
-                    "target": "\u672a\u77e5",
-                    "value": 30
-                },
-                {
-                    "source": "\u7537",
-                    "target": "\u8131\u5355",
-                    "value": 13
-                },
-                {
-                    "source": "\u5355\u8eab",
-                    "target": "\u5c0f\u5b66",
-                    "value": 57
-                },
-                {
-                    "source": "\u8131\u5355",
-                    "target": "\u521d\u4e2d",
-                    "value": 13
-                },
-                {
-                    "source": "\u672a\u77e5",
-                    "target": "\u5927\u4e13",
-                    "value": 30
-                },
-                {
-                    "source": "\u5355\u8eab",
-                    "target": "\u5c0f\u5b66",
-                    "value": 33
-                },
-                {
-                    "source": "\u8131\u5355",
-                    "target": "\u521d\u4e2d",
-                    "value": 5
-                },
-                {
-                    "source": "\u672a\u77e5",
-                    "target": "\u5927\u4e13",
-                    "value": 62
-                }
-            ],
-            "left": "5%",
-            "top": "5%",
-            "right": "20%",
-            "bottom": "5%",
-            "nodeWidth": 20,
-            "nodeGap": 30,
-            "nodeAlign": "justify",
-            "layoutIteration": 32,
-            "orient": "horizontal",
-            "draggable": true,
-            "emphasis": {
-                "focus": "none"
-            },
-            "label": {
-                "show": true,
-                "position": "right",
-                "margin": 8
-            },
-            "lineStyle": {
-                "show": true,
-                "width": 1,
-                "opacity": 0.3,
-                "curveness": 0.5,
-                "type": "solid",
-                "color": "source"
             }
         }
-    ],
-    "legend": [
-        {
-            "data": [
-                ""
-            ],
-            "selected": {},
-            "show": true,
-            "padding": 5,
-            "itemGap": 10,
-            "itemWidth": 25,
-            "itemHeight": 14,
-            "backgroundColor": "transparent",
-            "borderColor": "#ccc",
-            "borderWidth": 1,
-            "borderRadius": 0,
-            "pageButtonItemGap": 5,
-            "pageButtonPosition": "end",
-            "pageFormatter": "{current}/{total}",
-            "pageIconColor": "#2f4554",
-            "pageIconInactiveColor": "#aaa",
-            "pageIconSize": 15,
-            "animationDurationUpdate": 800,
-            "selector": false,
-            "selectorPosition": "auto",
-            "selectorItemGap": 7,
-            "selectorButtonGap": 10
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .sankey-container {
+                @apply relative w-full overflow-hidden rounded-lg shadow-lg bg-white;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
         }
-    ],
-    "tooltip": {
-        "show": true,
-        "trigger": "item",
-        "triggerOn": "mousemove|click",
-        "axisPointer": {
-            "type": "line"
-        },
-        "showContent": true,
-        "alwaysShowContent": false,
-        "showDelay": 0,
-        "hideDelay": 100,
-        "enterable": false,
-        "confine": false,
-        "appendToBody": false,
-        "transitionDuration": 0.4,
-        "textStyle": {
-            "fontSize": 14
-        },
-        "borderWidth": 0,
-        "padding": 5,
-        "order": "seriesAsc"
-    },
-    "title": [
-        {
-            "show": true,
-            "text": "\u6851\u57fa\u56feDemo",
-            "target": "blank",
-            "subtarget": "blank",
-            "padding": 5,
-            "itemGap": 10,
-            "textAlign": "auto",
-            "textVerticalAlign": "auto",
-            "triggerEvent": false
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-neutral">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- 页面标题 -->
+        <header class="mb-10 text-center">
+            <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-bold text-neutral mb-3">客户转化漏斗分析</h1>
+            <p class="text-gray-600 max-w-3xl mx-auto">
+                展示活跃客户、接触客户到转化客户的流动情况，帮助您了解客户在各阶段的转化效率和流失点
+            </p>
+        </header>
+        
+        <!-- 主要内容区 -->
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 左侧数据卡片 -->
+            <div class="lg:col-span-1 space-y-6">
+                <!-- 活跃客户卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-primary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">活跃客户</h3>
+                            <p class="text-gray-500 text-sm">潜在客户总数</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fa fa-users text-primary text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end">
+                        <span class="text-3xl font-bold text-neutral" id="active-customers">0</span>
+                        <span class="ml-2 text-green-500 text-sm flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i> 12.5%
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- 接触客户卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-accent">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">接触客户</h3>
+                            <p class="text-gray-500 text-sm">已接触的潜在客户</p>
+                        </div>
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fa fa-handshake-o text-accent text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end">
+                        <span class="text-3xl font-bold text-neutral" id="contacted-customers">0</span>
+                        <span class="ml-2 text-green-500 text-sm flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i> 8.2%
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- 转化客户卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover border-l-4 border-secondary">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">转化客户</h3>
+                            <p class="text-gray-500 text-sm">最终成交的客户</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="flex items-end">
+                        <span class="text-3xl font-bold text-neutral" id="converted-customers">0</span>
+                        <span class="ml-2 text-green-500 text-sm flex items-center">
+                            <i class="fa fa-arrow-up mr-1"></i> 5.3%
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- 转化率卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">转化效率</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">活跃到接触</span>
+                                <span class="text-sm font-medium" id="active-to-contact-rate">0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" id="active-to-contact-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">接触到转化</span>
+                                <span class="text-sm font-medium" id="contact-to-convert-rate">0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" id="contact-to-convert-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-gray-600">整体转化率</span>
+                                <span class="text-sm font-medium" id="overall-conversion-rate">0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" id="overall-conversion-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧桑基图 -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-md p-4 lg:p-6 h-full">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">客户转化路径桑基图</h2>
+                        <div class="flex space-x-2">
+                            <button id="refresh-btn" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg text-sm flex items-center transition-colors">
+                                <i class="fa fa-refresh mr-1"></i> 刷新数据
+                            </button>
+                            <button id="download-btn" class="bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg text-sm flex items-center transition-colors">
+                                <i class="fa fa-download mr-1"></i> 下载图表
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 桑基图容器 -->
+                    <div class="sankey-container" style="height: 500px;">
+                        <svg id="sankey-chart" class="w-full h-full"></svg>
+                        <!-- 加载指示器 -->
+                        <div id="loading-indicator" class="absolute inset-0 flex items-center justify-center bg-white/80 z-10">
+                            <div class="flex flex-col items-center">
+                                <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                                <p class="mt-3 text-gray-600">加载中...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 图例 -->
+                    <div class="mt-4 flex flex-wrap gap-4 justify-center">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-primary rounded mr-2"></div>
+                            <span class="text-sm text-gray-600">活跃客户</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-accent rounded mr-2"></div>
+                            <span class="text-sm text-gray-600">接触客户</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-secondary rounded mr-2"></div>
+                            <span class="text-sm text-gray-600">转化客户</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-gray-400 rounded mr-2"></div>
+                            <span class="text-sm text-gray-600">流失客户</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- 页脚 -->
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            <p>客户转化漏斗分析 &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // 生成模拟数据
+        function generateMockData() {
+            // 活跃客户来源
+            const activeSources = [
+                { name: "网站访问", value: Math.floor(Math.random() * 1500) + 1500 },
+                { name: "社交媒体", value: Math.floor(Math.random() * 1000) + 800 },
+                { name: "线下活动", value: Math.floor(Math.random() * 800) + 500 },
+                { name: "推荐介绍", value: Math.floor(Math.random() * 700) + 400 },
+                { name: "广告投放", value: Math.floor(Math.random() * 1200) + 1000 }
+            ];
+            
+            // 计算总活跃客户数
+            const totalActive = activeSources.reduce((sum, item) => sum + item.value, 0);
+            
+            // 接触方式
+            const contactMethods = [
+                { name: "电话沟通", minRate: 0.2, maxRate: 0.35 },
+                { name: "邮件营销", minRate: 0.1, maxRate: 0.2 },
+                { name: "在线咨询", minRate: 0.25, maxRate: 0.4 },
+                { name: "上门拜访", minRate: 0.15, maxRate: 0.3 }
+            ];
+            
+            // 转化类型
+            const conversionTypes = [
+                { name: "购买产品", minRate: 0.2, maxRate: 0.4 },
+                { name: "订阅服务", minRate: 0.15, maxRate: 0.3 },
+                { name: "合作项目", minRate: 0.05, maxRate: 0.15 }
+            ];
+            
+            // 构建节点
+            const nodes = [
+                // 活跃客户节点
+                ...activeSources.map(item => ({ name: item.name, category: "active" })),
+                // 接触客户节点
+                ...contactMethods.map(item => ({ name: item.name, category: "contact" })),
+                // 转化客户节点
+                ...conversionTypes.map(item => ({ name: item.name, category: "convert" })),
+                // 流失节点
+                { name: "未接触流失", category: "lost" },
+                { name: "未转化流失", category: "lost" }
+            ];
+            
+            // 构建连接
+            const links = [];
+            let totalContacted = 0;
+            
+            // 活跃客户 -> 接触方式
+            activeSources.forEach((source, sourceIdx) => {
+                let remaining = source.value;
+                
+                contactMethods.forEach((method, methodIdx) => {
+                    // 计算该来源通过该方式接触的客户数
+                    const rate = method.minRate + Math.random() * (method.maxRate - method.minRate);
+                    const value = Math.floor(source.value * rate);
+                    
+                    if (value > 0 && remaining > 0) {
+                        // 确保不会超过剩余客户数
+                        const actualValue = Math.min(value, remaining);
+                        
+                        links.push({
+                            source: sourceIdx,
+                            target: activeSources.length + methodIdx,
+                            value: actualValue
+                        });
+                        
+                        remaining -= actualValue;
+                        totalContacted += actualValue;
+                    }
+                });
+                
+                // 未接触的客户（流失）
+                if (remaining > 0) {
+                    links.push({
+                        source: sourceIdx,
+                        target: nodes.length - 2, // 未接触流失节点
+                        value: remaining
+                    });
+                }
+            });
+            
+            // 接触方式 -> 转化类型
+            let totalConverted = 0;
+            contactMethods.forEach((method, methodIdx) => {
+                const methodNodeIdx = activeSources.length + methodIdx;
+                // 找到该接触方式的总客户数
+                const methodTotal = links
+                    .filter(link => link.target === methodNodeIdx)
+                    .reduce((sum, link) => sum + link.value, 0);
+                
+                if (methodTotal === 0) return;
+                
+                let remaining = methodTotal;
+                
+                conversionTypes.forEach((type, typeIdx) => {
+                    // 计算该接触方式转化为该类型的客户数
+                    const rate = type.minRate + Math.random() * (type.maxRate - type.minRate);
+                    const value = Math.floor(methodTotal * rate);
+                    
+                    if (value > 0 && remaining > 0) {
+                        // 确保不会超过剩余客户数
+                        const actualValue = Math.min(value, remaining);
+                        
+                        links.push({
+                            source: methodNodeIdx,
+                            target: activeSources.length + contactMethods.length + typeIdx,
+                            value: actualValue
+                        });
+                        
+                        remaining -= actualValue;
+                        totalConverted += actualValue;
+                    }
+                });
+                
+                // 未转化的客户（流失）
+                if (remaining > 0) {
+                    links.push({
+                        source: methodNodeIdx,
+                        target: nodes.length - 1, // 未转化流失节点
+                        value: remaining
+                    });
+                }
+            });
+            
+            // 计算转化率
+            const activeToContactRate = totalActive > 0 ? (totalContacted / totalActive) * 100 : 0;
+            const contactToConvertRate = totalContacted > 0 ? (totalConverted / totalContacted) * 100 : 0;
+            const overallConversionRate = totalActive > 0 ? (totalConverted / totalActive) * 100 : 0;
+            
+            return {
+                nodes,
+                links,
+                totals: {
+                    active: totalActive,
+                    contacted: totalContacted,
+                    converted: totalConverted
+                },
+                rates: {
+                    activeToContact: activeToContactRate,
+                    contactToConvert: contactToConvertRate,
+                    overall: overallConversionRate
+                }
+            };
         }
-    ]
-};
-        chart_331262103b29493ea90668588d29b202.setOption(option_331262103b29493ea90668588d29b202);
+        
+        // 更新数据卡片
+        function updateDataCards(data) {
+            // 数字动画函数
+            function animateValue(id, start, end, duration) {
+                const obj = document.getElementById(id);
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // 动画更新数字
+            animateValue('active-customers', 0, data.totals.active, 1500);
+            animateValue('contacted-customers', 0, data.totals.contacted, 1500);
+            animateValue('converted-customers', 0, data.totals.converted, 1500);
+            
+            // 更新转化率
+            document.getElementById('active-to-contact-rate').textContent = 
+                data.rates.activeToContact.toFixed(1) + '%';
+            document.getElementById('active-to-contact-bar').style.width = 
+                data.rates.activeToContact + '%';
+                
+            document.getElementById('contact-to-convert-rate').textContent = 
+                data.rates.contactToConvert.toFixed(1) + '%';
+            document.getElementById('contact-to-convert-bar').style.width = 
+                data.rates.contactToConvert + '%';
+                
+            document.getElementById('overall-conversion-rate').textContent = 
+                data.rates.overall.toFixed(1) + '%';
+            document.getElementById('overall-conversion-bar').style.width = 
+                data.rates.overall + '%';
+        }
+        
+        // 绘制桑基图
+        function drawSankey(data) {
+            // 显示加载指示器
+            document.getElementById('loading-indicator').classList.remove('hidden');
+            
+            // 清除现有图表
+            d3.select("#sankey-chart").selectAll("*").remove();
+            
+            // 设置尺寸
+            const container = document.querySelector('.sankey-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+            
+            // 创建SVG
+            const svg = d3.select("#sankey-chart")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+            
+            // 定义颜色比例尺
+            const color = d3.scaleOrdinal()
+                .domain(["active", "contact", "convert", "lost"])
+                .range(["#3B82F6", "#8B5CF6", "#10B981", "#9CA3AF"]);
+            
+            // 创建桑基图生成器
+            const sankey = d3.sankey()
+                .nodeWidth(20)
+                .nodePadding(15)
+                .extent([[1, 1], [innerWidth - 1, innerHeight - 6]]);
+            
+            // 准备数据
+            const graph = {
+                nodes: data.nodes.map((d, i) => ({ ...d, id: i })),
+                links: data.links
+            };
+            
+            // 计算桑基图布局
+            sankey(graph);
+            
+            // 绘制连接线
+            const link = svg.append("g")
+                .selectAll("path")
+                .data(graph.links)
+                .enter().append("path")
+                .attr("d", d3.sankeyLinkHorizontal())
+                .attr("stroke", d => {
+                    // 根据源节点的类别确定线条颜色
+                    return color(graph.nodes[d.source].category);
+                })
+                .attr("stroke-width", d => Math.max(1, d.width))
+                .attr("fill", "none")
+                .attr("opacity", 0.6)
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("opacity", 1);
+                    // 显示 tooltip
+                    const tooltip = d3.select("body").append("div")
+                        .attr("class", "fixed bg-black text-white px-3 py-1 rounded text-sm z-50")
+                        .html(`流量: ${d.value.toLocaleString()} 客户`);
+                    
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style("left", (rect.left + window.scrollX + rect.width / 2) + "px")
+                        .style("top", (rect.top + window.scrollY - 30) + "px")
+                        .style("transform", "translateX(-50%)");
+                })
+                .on("mouseout", function() {
+                    d3.select(this).attr("opacity", 0.6);
+                    // 移除 tooltip
+                    d3.select("body").selectAll("div.fixed").remove();
+                });
+            
+            // 绘制节点
+            const node = svg.append("g")
+                .selectAll("rect")
+                .data(graph.nodes)
+                .enter().append("rect")
+                .attr("x", d => d.x0)
+                .attr("y", d => d.y0)
+                .attr("height", d => d.y1 - d.y0)
+                .attr("width", d => d.x1 - d.x0)
+                .attr("fill", d => color(d.category))
+                .attr("stroke", "#fff")
+                .attr("rx", 2)
+                .attr("ry", 2)
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("stroke", "#333").attr("stroke-width", 2);
+                })
+                .on("mouseout", function() {
+                    d3.select(this).attr("stroke", "#fff").attr("stroke-width", 1);
+                });
+            
+            // 添加节点标签
+            const label = svg.append("g")
+                .selectAll("text")
+                .data(graph.nodes)
+                .enter().append("text")
+                .attr("x", d => d.x0 < innerWidth / 2 ? d.x1 + 6 : d.x0 - 6)
+                .attr("y", d => (d.y1 + d.y0) / 2)
+                .attr("dy", "0.35em")
+                .attr("text-anchor", d => d.x0 < innerWidth / 2 ? "start" : "end")
+                .attr("font-size", "12px")
+                .attr("fill", "#333")
+                .text(d => d.name)
+                .append("tspan")
+                .attr("x", d => d.x0 < innerWidth / 2 ? d.x1 + 6 : d.x0 - 6)
+                .attr("dy", "1.2em")
+                .attr("font-size", "11px")
+                .attr("fill", "#666")
+                .text(d => {
+                    // 计算每个节点的总流量
+                    const totalIn = graph.links
+                        .filter(link => link.target === d.id)
+                        .reduce((sum, link) => sum + link.value, 0);
+                    
+                    const totalOut = graph.links
+                        .filter(link => link.source === d.id)
+                        .reduce((sum, link) => sum + link.value, 0);
+                    
+                    // 节点的总流量是流入和流出的最大值（除了源节点和目标节点）
+                    const total = Math.max(totalIn, totalOut);
+                    return total > 0 ? `${total.toLocaleString()} 客户` : "";
+                });
+            
+            // 隐藏加载指示器
+            setTimeout(() => {
+                document.getElementById('loading-indicator').classList.add('hidden');
+            }, 500);
+            
+            // 添加窗口大小变化事件
+            window.addEventListener('resize', () => {
+                drawSankey(data);
+            });
+        }
+        
+        // 初始化函数
+        let currentData;
+        function init() {
+            // 生成数据
+            currentData = generateMockData();
+            
+            // 更新数据卡片
+            updateDataCards(currentData);
+            
+            // 绘制桑基图
+            drawSankey(currentData);
+            
+            // 绑定刷新按钮事件
+            document.getElementById('refresh-btn').addEventListener('click', () => {
+                currentData = generateMockData();
+                updateDataCards(currentData);
+                drawSankey(currentData);
+            });
+            
+            // 绑定下载按钮事件
+            document.getElementById('download-btn').addEventListener('click', () => {
+                alert('图表下载功能已触发（实际项目中可实现为导出SVG或图片）');
+                // 实际项目中可以使用如下方法导出SVG:
+                // const svgData = document.getElementById('sankey-chart').outerHTML;
+                // const blob = new Blob([svgData], {type: 'image/svg+xml'});
+                // const url = URL.createObjectURL(blob);
+                // const a = document.createElement('a');
+                // a.href = url;
+                // a.download = 'sankey-chart.svg';
+                // a.click();
+            });
+        }
+        
+        // 页面加载完成后初始化
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>

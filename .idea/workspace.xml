@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4455a4f-482e-4aa7-b06b-49d720b3dd49" name="Default Changelist" comment="ffdaa" />
+    <list default="true" id="a4455a4f-482e-4aa7-b06b-49d720b3dd49" name="Default Changelist" comment="ffdaa">
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/Sankey_Chart.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/sankey_chart.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/stepNum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/数据统计.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sankey_Chart/heart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/BubbleSort.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/BubbleSort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/heart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/heart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/sankey_chart_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sankey_Chart/Sankey_Chart/sankey_chart_table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +50,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -41,31 +62,35 @@
     <option name="height" value="1141" />
   </component>
   <component name="ProjectId" id="1fIyxLuDHmIRki5gHbyEETBpVY8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/wangshenghua/todo/code",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.Canvas.html.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.test.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/wangshenghua/todo/code&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.31033.133" />
       </set>
     </attachedChunks>
   </component>
@@ -112,6 +137,26 @@
       <workItem from="1700183731843" duration="336000" />
       <workItem from="1700192955816" duration="78000" />
       <workItem from="1706797341168" duration="181000" />
+      <workItem from="1746763093892" duration="49000" />
+      <workItem from="1748308489199" duration="31000" />
+      <workItem from="1753383000226" duration="35000" />
+      <workItem from="1755220151681" duration="1582000" />
+      <workItem from="1755222425108" duration="159000" />
+      <workItem from="1757315492336" duration="67000" />
+      <workItem from="1757315680245" duration="918000" />
+      <workItem from="1760600454758" duration="180000" />
+      <workItem from="1760600653796" duration="346000" />
+      <workItem from="1760601128193" duration="9000" />
+      <workItem from="1761788014334" duration="156000" />
+      <workItem from="1761788203783" duration="229000" />
+      <workItem from="1765803613153" duration="489000" />
+      <workItem from="1765804237433" duration="75000" />
+      <workItem from="1767928021803" duration="396000" />
+      <workItem from="1767928580425" duration="26000" />
+      <workItem from="1769861320674" duration="506000" />
+      <workItem from="1769869189539" duration="6000" />
+      <workItem from="1771937378018" duration="314000" />
+      <workItem from="1771937734968" duration="82000" />
     </task>
     <task id="LOCAL-00001" summary="ffdaa">
       <created>1576330265481</created>

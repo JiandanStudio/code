@@ -5,7 +5,7 @@ def BubbleSort(arr):
             if arr[j]>arr[j+1]:
                 arr[j],arr[j+1] = arr[j+1],arr[j]
         for m in range(len(arr)):
-                print("%d" % arr[m])
+                print("%d" % arr[m],end=" ")
         print("\n")
 
 
